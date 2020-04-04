@@ -1,0 +1,115 @@
+      <footer class="main-footer"style="text-align:center;">
+        <strong>&copy; <script>var y = new Date(); document.write(y.getFullYear()+" ");</script> 
+        E-maths</strong> All rights reserved | Design by Umeoka Davis
+      </footer>
+
+    <!-- jQuery 2.1.3 -->
+    <script src="plugins/jQuery/jQuery-2.1.3.min.js"></script>
+    <!-- jQuery UI 1.11.2 -->
+    <script src="js/jquery-ui.min.js" type="text/javascript"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+      $.widget.bridge('uibutton', $.ui.button);
+    </script>
+    <!-- Bootstrap 3.3.2 JS -->
+    <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>   
+    <!-- DATA TABES SCRIPT -->
+    <script src="plugins/datatables/jquery.dataTables.js" type="text/javascript"></script>
+     
+    <!-- Morris.js charts -->
+    <script src="js/raphael-min.js"></script>
+    <script src="plugins/morris/morris.min.js" type="text/javascript"></script>
+    <!-- Sparkline -->
+    <script src="plugins/sparkline/jquery.sparkline.min.js" type="text/javascript"></script>
+    <!-- jvectormap -->
+    <script src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js" type="text/javascript"></script>
+    <script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js" type="text/javascript"></script>
+    <!-- jQuery Knob Chart -->
+    <script src="plugins/knob/jquery.knob.js" type="text/javascript"></script>
+    <!-- daterangepicker -->
+    <script src="plugins/daterangepicker/daterangepicker.js" type="text/javascript"></script>
+    <!-- datepicker -->
+    <script src="plugins/datepicker/bootstrap-datepicker.js" type="text/javascript"></script>
+    <!-- Bootstrap WYSIHTML5 -->
+    <script src="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js" type="text/javascript"></script>
+    <!-- iCheck -->
+    <script src="plugins/iCheck/icheck.min.js" type="text/javascript"></script>
+    <!-- Slimscroll -->
+    <script src="plugins/slimScroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+    <!-- FastClick -->
+    <script src='plugins/fastclick/fastclick.min.js'></script>
+    <!-- AdminLTE App -->
+    <!-- DATA TABES SCRIPT -->
+    <script src="plugins/datatables/dataTables.bootstrap.js" type="text/javascript"></script>
+    
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="dist/js/app.min.js" type="text/javascript"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="dist/js/demo.js" type="text/javascript"></script>
+
+   
+    <script type="text/javascript">
+      $(function () {
+        $("#example1").dataTable();
+        $('#example2').dataTable({
+          "bPaginate": true,
+          "bLengthChange": false,
+          "bFilter": false,
+          "bSort": true,
+          "bInfo": true,
+          "bAutoWidth": false
+        });
+      });
+    </script>
+      <!-- passport preview -->
+      <script>
+        $("#delsucs2").hide();
+        $("#viewbtn").hide();
+        $("#usereg").hide();
+        $("#shobtn").on("click", function(){
+          $("#usereg").show("slow");
+        });
+        $("#dhbtn").on("click", function(){
+          $("#usereg").hide("slow");
+        });
+
+        function delet()
+        {
+            var chk=confirm("Are You Sure To Permanently Delete This !");
+            if(chk)
+            {
+              return true;  
+            }
+            else{
+                return false;
+            }
+        }
+      </script>
+
+      <?php
+        if (isset($_POST['submit'])){
+          ?>
+            <script type="text/javascript">
+              $("#usereg").show();
+              $("#view").hide();
+              $("#viewbtn").show();
+              $("#dhbtn").hide();
+            </script>
+          <?php
+        }
+      ?>
+
+      <?php
+        if (isset($msg)){
+          ?>
+          <script>
+            setTimeout(function(){
+                if ($('#delsucs').length > 0) {
+                  $('#delsucs').fadeOut("slow");
+                }
+              }, 5000)   
+          </script>
+          <?php
+        }
+      ?>
+      <!-- passport preview ends -->
